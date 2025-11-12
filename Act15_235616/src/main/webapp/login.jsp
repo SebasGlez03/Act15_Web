@@ -4,7 +4,9 @@
     Author     : LENOVO
 --%>
 
+<%@ taglib uri="https://jakarta.ee/specifications/tags/6.0/tld/c" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="/WEB-INF/fragments/header.jspf" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,24 +18,18 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <h2 class="text-center mt-5 mb-3">Iniciar Sesion</h2>
-    
-                    <!-- Mostramos un mensaje de error si existe en el request.
-                    El LoginServlet lo define si las credenciales son incorrectas. -->
                     <c:if test="${not empty error}">
                         <div class="alert alert-danger" role="alert">
                             ${error}
                         </div>
                     </c:if>
-    
-                    <!-- Mostramos un mensaje de error si existe (ej. despues de cerrar sesion) -->
+
                      <c:if test="${not empty mensaje}">
                         <div class="alert alert-success" role="alert">
                             ${mensaje}
                         </div>
                      </c:if>
     
-                     <!-- El formulario envia los datos al LoginServlet (mapeado /login)
-                     usando el metodo POST -->
                      <form action="login" method="POST" class="card p-4 shadow-ms">
                         <div class="mb-3">
                             <label for="username" class="form-label">Usuario:</label>
@@ -53,3 +49,5 @@
         </div>
     </body>
 </html>
+
+<jsp:include page="/WEB-INF/fragments/footer.jspf" />
