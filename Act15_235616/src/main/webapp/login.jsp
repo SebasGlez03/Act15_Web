@@ -4,7 +4,7 @@
     Author     : LENOVO
 --%>
 
-<%@ taglib uri="https://jakarta.ee/specifications/tags/6.0/tld/c" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="/WEB-INF/fragments/header.jspf" />
 <!DOCTYPE html>
